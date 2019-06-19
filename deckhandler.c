@@ -98,6 +98,7 @@ deck_shuffle_dh (st_deck_dh *deck_dh)
   while (j < CARDS_IN_DECK)
   {
     /* card will a random number between 0 and 51 */
+    rand();
     card = rand () % CARDS_IN_DECK;
 
     if (status[card])

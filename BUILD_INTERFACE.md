@@ -17,6 +17,7 @@ After creating the interface, you can run it as so in python (note: make sure yo
 ```py
 import deckhandler
 
+deckhandler.seed(13)
 # Create a deck.
 deck = deckhandler.st_deck_dh()
 
@@ -27,8 +28,11 @@ deckhandler.deck_init_dh(deck)
 deckhandler.deck_shuffle_dh(deck)
 
 # get the 11th card in the deck.
-card = deckhandler.deck_dh_get(deck, 10)
+
 
 # Print the face value and suit value of this card.
-print("face val: {}, suit value: {}".format(card.face_val, card.suit))
+for i in range(deckhandler.CARDS_IN_DECK):
+    card = deckhandler.deck_dh_get(deck, i)
+    print("face val: {}, suit value: {}".format(deckhandler.get_card_face(card), deckhandler.get_card_suit(card)))
+print(deckhandler.deck_dh_get(deck, 6).face_val)
 ```
